@@ -8,20 +8,13 @@ class CandidatesController < ApplicationController
   end
 
   def create
-# name = params["name"]
-# name = params["name"]
-# name = params["name"]
-#
-# name = params["name"]
+    party = params["party"]
+    district = params["district"]
+    hometown = params["hometown"]
+    name = params["name"]
+    candi = Candidate.create!(name: name, hometown: hometown, district: district, party: party)
+    render json:Candidate.find(candi.id)
 
-    # 
-    # Candidate.create!
-    # render json: Candidate.last
-    # render json:
-
-
-#   id = params["id"]
-# render json:Candidate.find(id)
-# http://localhost:3000/candidates/create?id=1
+# http://localhost:3000/candidates/create?name=boner&hometown=boner&district=boner&party=boner
   end
 end

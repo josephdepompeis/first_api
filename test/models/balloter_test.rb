@@ -18,14 +18,13 @@ class BalloterTest < ActiveSupport::TestCase
   end
 
 
-  test "test balloters have candidates" do
-   bal1 = Balloter.create!(name: "johnson", candidate_id: 6, party: "Republican", token: "hello")
-   bal2 = Balloter.create!(name: "janice", candidate_id: 7, party: "Democrat", token: "Yellow")
-   bal3 = Balloter.create!(name: "Candace", candidate_id: 11, party: "Democlican", token: "Smart")
-   can1 = Candidate.create!(name: "Smithy", party: "Remarican", hometown: "Houseville", district: "of Columbe")
-   assert_equal bal3.candidate_id, bal3.candidate_id
-
-  end
+  # test "test balloters have candidates" do
+  #  bal1 = Balloter.create!(name: "johnson", candidate_id: 6, party: "Republican", token: "hello")
+  #  bal2 = Balloter.create!(name: "janice", candidate_id: 7, party: "Democrat", token: "Yellow")
+  #  bal3 = Balloter.create!(name: "Candace", candidate_id: 11, party: "Democlican", token: "Smart")
+  #  can1 = Candidate.create!(name: "Smithy", party: "Remarican", hometown: "Houseville", district: "of Columbe")
+  #  assert_equal bal3.candidate_id, bal3.candidate_id
+  # end
 
 end
 

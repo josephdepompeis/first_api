@@ -12,8 +12,12 @@ class CandidatesControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create
-    assert_response :success
+    assert_difference("Candidate.count", 1) do
+
+
+      get :create, id: candidate(:One).id, name: candidate(:One).name, hometown: candidate(:One).hometown, district: candidate(:One).district, party: candidate(:One).party
+      assert_response :success
+  end
   end
 
 end

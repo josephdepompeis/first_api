@@ -1,6 +1,6 @@
 class Candidate < ActiveRecord::Base
 has_many :votes
-has_many :balloters
+# has_many :balloters
 
 validates :name, presence: true
 validates :hometown, presence: true

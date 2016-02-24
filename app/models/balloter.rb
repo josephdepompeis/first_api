@@ -1,5 +1,5 @@
 class Balloter < ActiveRecord::Base
-  belongs_to :candidate
+  # belongs_to :candidate
   has_many :votes
 
   validates :name, presence: true
