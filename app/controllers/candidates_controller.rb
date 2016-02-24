@@ -8,6 +8,8 @@ class CandidatesController < ApplicationController
   end
 
   def create
+    Candidate.create!
+    render json: Candidate.last
     # render json:
 
 
