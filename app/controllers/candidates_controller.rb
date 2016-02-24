@@ -8,8 +8,15 @@ class CandidatesController < ApplicationController
   end
 
   def create
-    Candidate.create!
-    render json: Candidate.last
+# name = params["name"]
+# name = params["name"]
+# name = params["name"]
+#
+# name = params["name"]
+
+    # 
+    # Candidate.create!
+    # render json: Candidate.last
     # render json:
 
 
