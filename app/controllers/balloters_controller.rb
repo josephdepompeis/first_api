@@ -15,7 +15,6 @@ class BallotersController < ApplicationController
     else
       render json: "Token is either missing or invalid"
     end
-
   end
 
   def update

@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'securerandom'
 
 class BallotersControllerTest < ActionController::TestCase
   test "should get create" do
@@ -9,13 +10,15 @@ class BallotersControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+      bal1 = Balloter.create!(name: "Smithy", party: "Wrecken", token: SecureRandom.hex)
+    get :show, token: bal1.token
     assert_response :success
   end
+
 
   test "should get update" do
-    get :update
-    assert_response :success
+    bal1 = Balloter.create!(name: "Smithy", party: "Wrecken", token: SecureRandom.hex)
+    get :update, token: bal1.token, name:"BONGI"
+    assert_equal "BONGI", Balloter.find(bal1.id).name
   end
-
 end
