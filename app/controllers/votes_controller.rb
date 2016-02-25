@@ -1,15 +1,15 @@
 class VotesController < ApplicationController
   def create
-      bal = params["balloter_id"]
+    token = params["token"]
+    if token
       can = params["candidate_id"]
-      # candi = Candidate.create!(name: name, hometown: hometown, district: district, party: party)
-      votez = Vote.create!(balloter_id: bal, candidate_id: can)
-      # render json:votez
-      render json:Vote.find(votez.id)
+      token = params["token"]
+      votez = Vote.create!(balloter_id: Balloter.where(token: token).first.id, candidate_id: can)
 
-      # 
-      # json:Candidate.find(candi.id)
-  # http://localhost:3000/candidates/create?name=boner&hometown=boner&district=boner&party=boner
+      render json:Vote.find(votez.id)
+    else
+      render json: "Token is either missing or invalid"
+    end
   end
 
   def destroy
