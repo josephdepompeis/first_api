@@ -2,8 +2,10 @@ require 'test_helper'
 
 class BallotersControllerTest < ActionController::TestCase
   test "should get create" do
-    get :create
-    assert_response :success
+    assert_difference("Balloter.count", 1) do
+      get :create, name: balloter(:One).name, party: balloter(:One).party
+      assert_response :success
+      end
   end
 
   test "should get show" do
